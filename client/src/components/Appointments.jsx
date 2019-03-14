@@ -21,10 +21,10 @@ const Appointments = (props) => {
           {props.appointments.map((appointment, i) => {
             return (
               <tr className="label-body" value={appointment} key={i}>
-                <td className="label user"> {appointment.appointmentId} </td>
-                <td className="label url" > {`${appointment.patient.first} ${appointment.patient.last}`} </td>
-                <td className="label desc"> {appointment.time} </td>
-                <td className="label forks"> {appointment.kind} </td>
+                <td className="label id"> {appointment.appointmentId} </td>
+                <td className="label name" > {`${appointment.patient.first} ${appointment.patient.last}`} </td>
+                <td className="label time"> {appointment.time} </td>
+                <td className="label kind"> {appointment.kind} </td>
               </tr>
             )}
           )}
