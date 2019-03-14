@@ -1,29 +1,69 @@
 .title {
-	background-color: black; 
-	color: #337fdd;
+	background-color: #f4f4f6; 
+	color: #0073e5;
+	/* margin: 10px; */
 	margin: 0;
-	padding: 20px;
+	padding: 30px;
+	font-family: "FFMark_Medium",sans-serif;
+	font-weight: 800;
 }
 
-.search, .repolist {
-	padding: 5px 20px;
+.container {
+	display: flex;
+	height: 100%;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.phys-container {
+	background-color: #f4f4f6;
+	padding: 30px 60px;
+	/* margin-left: 10px; */
+	height: -webkit-fill-available;
+}
+
+.appt-container {
+	padding: 20px 60px;
 }
 
 .table {
-	margin: 5px 10px;
+	margin: 10px 0px;
+	border-collapse: collapse;
+}
+
+#physician {
+	padding: 5px 20px;
+}
+
+#physician:hover {
+	background-color: #0073e5;
+	color: whitesmoke;
 }
 
 .labels {
 	font-weight: bold;
-	background-color: lightgrey;
-	padding: 10px;
+	background-color: #337fdd;
+	color:whitesmoke;
+	padding: 20px;
 	margin: 10px;
 }
 
 .label {
-	margin: 40px;
-	/*display: flex;*/
-	/*flex-wrap: space;*/
-	/*align-items: space-between;*/
+	padding: 10px 20px;
+}
 
+.label-body:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+.label-body:hover {
+	background-color:#a8a7a7de;
+}
+
+#logout {
+	padding: 10px 20px;
+	border-radius: 6px;
+	font-size: medium;
+	font-weight: bold;
+	color: white;
+	background-color: #337fdd;
 }

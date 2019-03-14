@@ -1,41 +1,42 @@
 import React from 'react';
 
-const Appointments = (props) => (
-  <div className="appointments">
-    <h1> {`Dr. ${props.selected.first} ${props.selected.last}`} </h1>
-    <h4> {props.selected.email} </h4>
-    <h3> Appointments List </h3>
-    There are {props.appointments.length} appointments.
+const Appointments = (props) => {
+  return (
+    <div className="appointments">
+      <h1> {`Dr. ${props.selected.first} ${props.selected.last}`} </h1>
+      <h4> {props.selected.email} </h4>
+      <h3> Appointments List </h3>
+      <p> {`There are ${props.appointments.length} appointment(s).`} </p>
 
-    <table className="table">
-	    <thead className="labels">
-	    	<tr>
-			    <th className="label num"> # </th>
-			    <th className="label name"> Patient Name </th>
-			    <th className="label time"> Time </th>
-			    <th className="label kind"> Kind </th>
-		    </tr>
-	    </thead>
-	    {/* <tbody>
-		    {props.repos.map((repo, i) => {
-		    	return (
-		    		<tr value={repo} key={i}>
-		    			<td className="user"> {repo.owner_login} </td>
-		    			<td><a className="url" href={repo.html_url}> {repo.name} </a></td>
-		    			<td className="desc"> {repo.description} </td>
-		    			<td className="forks"> {repo.forks} </td>
-		    		</tr>
-		    	)}
-		    )}
-	    </tbody> */}
-    </table>
-  </div>
-)
+      <table className="table">
+        <thead >
+          <tr className="labels">
+            <th className="label num"> # </th>
+            <th className="label name"> Patient Name </th>
+            <th className="label time"> Time </th>
+            <th className="label kind"> Kind </th>
+          </tr>
+        </thead>
+        <tbody>
+          {props.appointments.map((appointment, i) => {
+            return (
+              <tr className="label-body" value={appointment} key={i}>
+                <td className="label user"> {appointment.appointmentId} </td>
+                <td className="label url" > {`${appointment.patient.first} ${appointment.patient.last}`} </td>
+                <td className="label desc"> {appointment.time} </td>
+                <td className="label forks"> {appointment.kind} </td>
+              </tr>
+            )}
+          )}
+        </tbody>
+      </table>
+    </div>
+  );
+}
 
 export default Appointments;
 
-// if (appointments.length === 0) {
+// if (props.appointments.length === 0) {
 //   getAppt = <p>There are no appointments here.</p>
 // } else {
-
 // }

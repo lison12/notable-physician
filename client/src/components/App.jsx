@@ -1,5 +1,4 @@
 import React from 'react';
-// import $ from 'jquery';
 import axios from 'axios';
 import Physicians from './Physicians.jsx';
 import Appointments from './Appointments.jsx';
@@ -25,8 +24,10 @@ class App extends React.Component {
       .then(results => {
         this.setState({
           physicians: results.data,
-          selected: results.data[1]
-        })
+          selected: results.data[0]
+        },
+        this.getAppointments(results.data[0].id)
+        )
       })
       .catch(error => {
         console.log(error)
@@ -63,16 +64,14 @@ class App extends React.Component {
     return (
       <div>
         <h1 className="title"> notable Physician </h1>
-        {/* <Search onSearch={this.search.bind(this)}/> */}
   
         <div className='container' >
-          <section className='physicians-container' >
+          <div className='phys-container' >
             <Physicians physicians={this.state.physicians} selectDoc={this.selectDoc} />
-          </section>
-
-          <section className='appointments-container' >
+          </div>
+          <div className='appt-container' >
             <Appointments selected={this.state.selected} appointments={this.state.appointments} />
-          </section>
+          </div>
         </div>
       </div>
     );
